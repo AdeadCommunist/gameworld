@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИгроМир: Лучшие Мини-Игры!</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles/181.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="">
+    <nav class="bg-white shadow-lg sticky top-0 z-50 dark:bg-dark-surface dark:border-b dark:border-dark-border">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#home" class="text-3xl font-bold text-blue-600 flex items-center dark:text-dark-primary">
+                <i class="fas fa-gamepad mr-2 text-yellow-400 dark:text-yellow-300"></i>ИгроМир
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#home" class="nav-link text-gray-700 font-medium">Главная</a>
+                <div class="relative dropdown">
+                    <button class="nav-link text-gray-700 font-medium focus:outline-none">
+                        Игры <i class="fas fa-chevron-down fa-xs"></i>
+                    </button>
+                    <div class="dropdown-menu absolute hidden bg-white shadow-xl rounded-lg mt-2 py-2 w-48 z-20 dark:bg-dark-surface dark:border dark:border-dark-border">
+                        <a href="#snake" class="block px-4 py-2 text-gray-700 hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700 dark:hover:text-dark-primary">Змейка</a>
+                        <a href="#tetris" class="block px-4 py-2 text-gray-700 hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700 dark:hover:text-dark-primary">Тетрис</a>
+                        <a href="#2048" class="block px-4 py-2 text-gray-700 hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700 dark:hover:text-dark-primary">2048</a>
+                        <a href="#match3" class="block px-4 py-2 text-gray-700 hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700 dark:hover:text-dark-primary">Три в ряд</a>
+                        <a href="#saper" class="block px-4 py-2 text-gray-700 hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700 dark:hover:text-dark-primary">Сапёр</a>
+                         <a href="#memory" class="block px-4 py-2 text-gray-700 hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700 dark:hover:text-dark-primary">На память</a>
+                    </div>
+                </div>
+                <a href="#profile" class="nav-link text-gray-700 font-medium">Профиль</a>
+                <a href="#leaderboard" class="nav-link text-gray-700 font-medium">Лидеры</a>
+                <button id="tutorialButton" class="nav-link text-gray-700 font-medium">Обучение</button>
+                <button id="themeToggle" aria-label="Переключить тему">
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <div class="md:hidden flex items-center">
+                 <button id="themeToggleMobile" aria-label="Переключить тему" class="text-gray-700 dark:text-dark-text mr-4 text-xl">
+                     <i class="fas fa-sun"></i>
+                 </button>
+                <button id="mobileMenuButton" class="text-gray-700 focus:outline-none dark:text-dark-text">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden bg-white shadow-lg py-2 dark:bg-dark-surface">
+            <a href="#home" class="block px-6 py-2 text-gray-700 font-medium hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700">Главная</a>
+            <a href="#snake" class="block px-6 py-2 text-gray-700 font-medium hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700">Змейка</a>
+            <a href="#tetris" class="block px-6 py-2 text-gray-700 font-medium hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700">Тетрис</a>
+            <a href="#2048" class="block px-6 py-2 text-gray-700 font-medium hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700">2048</a>
+            <a href="#match3" class="block px-6 py-2 text-gray-700 font-medium hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700">Три в ряд</a>
+            <a href="#saper" class="block px-6 py-2 text-gray-700 font-medium hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700">Сапёр</a>
+            <a href="#memory" class="block px-6 py-2 text-gray-700 font-medium hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700">На память</a>
+            <a href="#profile" class="block px-6 py-2 text-gray-700 font-medium hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700">Профиль</a>
+            <a href="#leaderboard" class="block px-6 py-2 text-gray-700 font-medium hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700">Лидеры</a>
+            <button id="tutorialButtonMobile" class="block w-full text-left px-6 py-2 text-gray-700 font-medium hover:bg-blue-500 hover:text-white dark:text-dark-text dark:hover:bg-gray-700">Обучение</button>
+        </div>
+    </nav>
+
+    <main id="mainContent" class="container mx-auto px-6 py-8">
+        <section id="home" class="page-section">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-bold text-blue-700 mb-4 dark:text-dark-primary">Добро пожаловать в ИгроМир!</h1>
+                <p class="text-xl text-gray-600 dark:text-dark-text-secondary">Ваш портал в мир увлекательных мини-игр. Готовы к веселью?</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="game-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://i.ibb.co/pvQc7XP2/photo-2025-06-23-22-49-45.jpg" alt="Змейка" style="height: 15rem;" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-green-600 dark:text-green-400">Змейка</h3>
+                        <p class="text-gray-600 mb-4 dark:text-dark-text-secondary">Классическая игра на ловкость и скорость. Управляйте змейкой и собирайте еду, чтобы расти!</p>
+                        <a href="#snake" class="btn-success inline-block px-6 py-3 rounded-lg font-medium">Играть!</a>
+                    </div>
+                </div>
+                <div class="game-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://i.ibb.co/cSX5WSks/photo-2025-06-23-22-49-40.jpg" alt="Тетрис" style="height: 15rem;" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-red-600 dark:text-red-400">Тетрис</h3>
+                        <p class="text-gray-600 mb-4 dark:text-dark-text-secondary">Легендарная головоломка. Складывайте падающие блоки и очищайте ряды!</p>
+                        <a href="#tetris" class="btn-danger inline-block px-6 py-3 rounded-lg font-medium">Играть!</a>
+                    </div>
+                </div>
+                <div class="game-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://i.ibb.co/DHL33MLS/Chat-GPT-Image-23-2025-22-14-17.png" alt="2048" style="height: 15rem;" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-yellow-600 dark:text-yellow-400">2048</h3>
+                        <p class="text-gray-600 mb-4 dark:text-dark-text-secondary">Соединяйте плитки с одинаковыми числами, чтобы получить заветную плитку 2048!</p>
+                        <a href="#2048" class="btn-warning inline-block px-6 py-3 rounded-lg font-medium">Играть!</a>
+                    </div>
+                </div>
+                 <div class="game-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://i.ibb.co/5xGW025g/3.png" alt="Три в ряд" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-purple-500 dark:text-purple-400">Три в ряд</h3>
+                        <p class="text-gray-600 mb-4 dark:text-dark-text-secondary">Собирайте комбинации из трех и более одинаковых элементов, чтобы набрать очки!</p>
+                        <a href="#match3" class="btn-primary inline-block px-6 py-3 rounded-lg font-medium">Играть!</a>
+                    </div>
+                </div>
+                 <div class="game-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://i.ibb.co/ccjfXb5b/image.png" alt="Сапёр" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-gray-700 dark:text-gray-400">Сапёр</h3>
+                        <p class="text-gray-600 mb-4 dark:text-dark-text-secondary">Найдите все бомбы на минном поле, не подорвавшись!</p>
+                        <a href="#saper" class="btn-danger inline-block px-6 py-3 rounded-lg font-medium">Играть!</a>
+                    </div>
+                </div>
+                 <div class="game-card bg-white rounded-xl shadow-lg overflow-hidden">
+                    <img src="https://i.ibb.co/CpkBzPzy/memorygame.png" alt="Игра На память" class="w-full h-48 object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Not+Found';">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-semibold mb-2 text-pink-600 dark:text-pink-400">На память</h3>
+                        <p class="text-gray-600 mb-4 dark:text-dark-text-secondary">Проверьте свою память, находя пары одинаковых карточек!</p>
+                        <a href="#memory" class="btn-warning inline-block px-6 py-3 rounded-lg font-medium">Играть!</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="snake" class="page-section hidden">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-bold text-green-600 dark:text-dark-secondary">Змейка</h2>
+            </div>
+            <div class="game-container">
+                <div class="score-board mb-6 w-full max-w-md">
+                    <h2 class="text-2xl font-semibold mb-2">Счет</h2>
+                    <p id="snakeScoreDisplay" class="font-bold">0</p>
+                </div>
+                <canvas id="snakeCanvas" class="game-canvas" width="400" height="400"></canvas>
+                <div class="game-controls mt-6 space-x-4">
+                    <button id="snakeStartButton" class="btn-success px-6 py-3 rounded-lg font-medium text-lg">Начать Игру</button>
+                    <button id="snakePauseButton" class="btn-warning px-6 py-3 rounded-lg font-medium text-lg" disabled>Пауза</button>
+                </div>
+                 <div id="snakeGameOverMessage" class="mt-4 text-2xl font-bold text-red-500 hidden dark:text-red-400">Игра Окончена!</div>
+            </div>
+        </section>
+
+        <section id="tetris" class="page-section hidden">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-bold text-red-600 dark:text-dark-secondary">Тетрис</h2>
+            </div>
+            <div class="game-container tetris-layout">
+                <canvas id="tetrisCanvas" class="game-canvas"></canvas>
+                <div class="tetris-info w-full md:w-auto md:max-w-xs">
+                    <div class="score-board mb-6">
+                        <h2 class="text-xl font-semibold">Счет</h2>
+                        <p id="tetrisScoreDisplay" class="font-bold">0</p>
+                    </div>
+                    <div class="score-board mb-6">
+                        <h2 class="text-xl font-semibold">Линии</h2>
+                        <p id="tetrisLinesDisplay" class="font-bold">0</p>
+                    </div>
+                    <div class="score-board mb-6">
+                        <h2 class="text-xl font-semibold">Уровень</h2>
+                        <p id="tetrisLevelDisplay" class="font-bold">1</p>
+                    </div>
+                    <div class="text-center mb-4">
+                        <h3 class="text-lg font-semibold mb-2 text-blue-700 dark:text-dark-primary">Следующая:</h3>
+                        <canvas id="nextPieceCanvas" style="padding-block: inherit; padding: 65px 55px 60px 55px;" class="next-piece-canvas mx-auto"></canvas>
+                    </div>
+                    <div class="game-controls mt-6 flex flex-col items-center space-y-3">
+                        <button id="tetrisStartButton" class="btn-danger px-6 py-3 rounded-lg font-medium text-lg w-full">Начать Игру</button>
+                        <button id="tetrisPauseButton" class="btn-warning px-6 py-3 rounded-lg font-medium text-lg w-full" disabled>Пауза</button>
+                    </div>
+                    <div id="tetrisGameOverMessage" class="mt-4 text-2xl font-bold text-red-700 hidden text-center dark:text-red-500">Игра Окончена!</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="2048" class="page-section hidden">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-bold text-yellow-600 dark:text-yellow-400">2048</h2>
+            </div>
+            <div class="game-container">
+                <div class="score-board mb-6 w-full max-w-md">
+                    <h2 class="text-2xl font-semibold mb-2">Счет</h2>
+                    <p id="score2048Display" class="font-bold">0</p>
+                </div>
+                <div id="game2048BoardContainer" class="relative">
+                    <div id="game2048Board"></div>
+                    <div id="game2048OverMessage" class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white text-3xl font-bold hidden rounded-md">
+                        <p>Игра Окончена!</p>
+                        <button id="restart2048Button" class="btn-warning px-6 py-3 rounded-lg font-medium text-lg mt-4">Играть снова</button>
+                    </div>
+                </div>
+                <div class="game-controls mt-6">
+                    <button id="start2048Button" class="btn-warning px-6 py-3 rounded-lg font-medium text-lg">Начать Игру</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="match3" class="page-section hidden">
+             <div class="text-center mb-8">
+                <h2 class="text-4xl font-bold text-purple-500 dark:text-purple-400">Три в ряд</h2>
+            </div>
+            <div class="game-container">
+                 <div class="score-board mb-6 w-full max-w-md">
+                    <div class="flex justify-around">
+                        <div>
+                            <h2 class="text-2xl font-semibold mb-2">Счет</h2>
+                            <p id="match3ScoreDisplay" class="font-bold">0</p>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-semibold mb-2 mt-0">Ходы</h2>
+                            <p id="match3MovesDisplay" class="font-bold">30</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="match3GameBoard"></div>
+                <div class="game-controls mt-6 space-x-4">
+                    <button id="match3StartButton" class="btn-primary px-6 py-3 rounded-lg font-medium text-lg">Начать Игру</button>
+                </div>
+                 <div id="match3GameOverMessage" class="mt-4 text-2xl font-bold text-red-500 hidden dark:text-red-400">Ходы закончились!</div>
+            </div>
+        </section>
+
+        <section id="saper" class="page-section hidden">
+             <div class="text-center mb-8">
+                <h2 class="text-4xl font-bold text-gray-700 dark:text-gray-400">Сапёр</h2>
+            </div>
+            <div class="game-container">
+                 <div class="score-board mb-6 w-full max-w-md">
+                     <div class="flex justify-around items-center">
+                        <div>
+                            <h2 class="text-2xl font-semibold mb-2">Бомбы</h2>
+                            <p id="saperBombsDisplay" class="font-bold">10</p>
+                        </div>
+                         <div>
+                            <h2 class="text-2xl font-semibold mb-2">Время</h2>
+                            <p id="saperTimeDisplay" class="font-bold">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center">
+                    <div id="saperBoard" class="w-full max-w-2xl aspect-square"></div>
+                    <div class="game-controls mt-6 space-x-4">
+                        <button id="saperStartButton" class="btn-danger px-6 py-3 rounded-lg font-medium text-lg">Начать Игру</button>
+                    </div>
+                </div>
+                 <div id="saperGameOverMessage" class="mt-4 text-2xl font-bold text-red-500 hidden dark:text-red-400">Игра Окончена!</div>
+            </div>
+        </section>
+
+        <section id="memory" class="page-section hidden">
+             <div class="text-center mb-8">
+                <h2 class="text-4xl font-bold text-pink-600 dark:text-pink-400">На память</h2>
+            </div>
+            <div class="game-container">
+                 <div class="score-board mb-6 w-full max-w-md">
+                     <div class="flex justify-around">
+                        <div>
+                            <h2 class="text-2xl font-semibold mb-2">Счет</h2>
+                            <p id="memoryScoreDisplay" class="font-bold">0</p>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-semibold mb-2 mt-0">Попытки</h2>
+                            <p id="memoryAttemptsDisplay" class="font-bold">0</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="memoryGameBoard"></div>
+                <div class="game-controls mt-6 space-x-4">
+                    <button id="memoryStartButton" class="btn-warning px-6 py-3 rounded-lg font-medium text-lg">Начать Игру</button>
+                </div>
+                 <div id="memoryWinMessage" class="mt-4 text-2xl font-bold text-green-500 hidden dark:text-green-400">Победа! Вы нашли все пары!</div>
+            </div>
+        </section>
+
+
+        <section id="profile" class="page-section hidden">
+            <div class="profile-section max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold mb-8 text-center dark:text-dark-primary">Личный Кабинет</h2>
+                <div class="text-center mb-6">
+                    <img src="https://placehold.co/150x150/A0AEC0/FFFFFF?text=Аватар" alt="Изображение Аватар пользователя" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-300 dark:border-dark-primary" onerror="this.onerror=null;this.src='https://placehold.co/150x150/cccccc/ffffff?text=Image+Not+Found';">
+                    <h3 class="text-2xl font-semibold dark:text-dark-text" id="usernamePlaceholder">ИмяПользователя123</h3>
+                    <p class="text-gray-500 dark:text-dark-text-secondary">Присоединился: 10 мая 2025</p>
+                </div>
+
+                <h4 class="text-2xl font-semibold mb-4 text-gray-700 dark:text-dark-text">Мои Рекорды:</h4>
+                <div class="space-y-4">
+                    <div class="record-item"><p class="font-medium text-green-700 dark:text-green-300">Змейка: <span class="font-bold text-lg" id="snakeProfileRecord">0</span> очков</p></div>
+                    <div class="record-item"><p class="font-medium text-red-700 dark:text-red-300">Тетрис: <span class="font-bold text-lg" id="tetrisProfileRecord">0</span> очков</p></div>
+                    <div class="record-item"><p class="font-medium text-yellow-700 dark:text-yellow-300">2048: <span class="font-bold text-lg" id="game2048ProfileRecord">0</span> очков</p></div>
+                    <div class="record-item"><p class="font-medium text-purple-700 dark:text-purple-300">Три в ряд: <span class="font-bold text-lg" id="match3ProfileRecord">0</span> очков</p></div>
+                    <div class="record-item"><p class="font-medium text-gray-700 dark:text-gray-300">Сапёр: <span class="font-bold text-lg" id="saperProfileRecord">0</span> сек</p></div>
+                    <div class="record-item"><p class="font-medium text-pink-700 dark:text-pink-300">На память: <span class="font-bold text-lg" id="memoryProfileRecord">0</span> попыток</p></div>
+                </div>
+                <div class="mt-8 text-center">
+                     <button class="btn-primary px-6 py-3 rounded-lg font-medium">Редактировать Профиль</button>
+                     <button class="btn-danger px-6 py-3 rounded-lg font-medium ml-4">Выйти</button>
+                </div>
+                <p class="text-sm text-gray-500 mt-6 text-center dark:text-dark-text-secondary"> *Функционал регистрации, входа и сохранения рекордов требует серверной части и базы данных. Здесь представлен макет.</p>
+            </div>
+        </section>
+
+        <section id="leaderboard" class="page-section hidden">
+            <div class="text-center mb-8">
+                <h2 class="text-4xl font-bold text-blue-700 dark:text-dark-primary">Таблица Лидеров</h2>
+            </div>
+             <p class="text-sm text-gray-500 mt-6 text-center dark:text-dark-text-secondary"> *Данные в таблицах лидеров являются примером. Реальные таблицы будут обновляться на основе результатов игроков.</p>
+        </section>
+
+        <div id="tutorialModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close-button" id="closeTutorialButton">&times;</span>
+                    <h2>Добро пожаловать в ИгроМир!</h2>
+                </div>
+                <div class="modal-body">
+                    <h4 class="font-semibold text-lg mt-4 mb-2 text-green-600 dark:text-green-400">Как играть в "Змейку":</h4>
+                    <ul class="dark:text-dark-text-secondary">
+                        <li>Используй клавиши со стрелками (↑, ↓, ←, →) для управления.</li>
+                        <li>Не врезайся в стены или в собственный хвост.</li>
+                    </ul>
+                    <h4 class="font-semibold text-lg mt-4 mb-2 text-red-600 dark:text-red-400">Как играть в "Тетрис":</h4>
+                    <ul class="dark:text-dark-text-secondary">
+                        <li>←/→: двигать фигуру влево/вправо.</li>
+                        <li>↓: ускорить падение.</li>
+                        <li>↑, 'x', или 'w': повернуть фигуру.</li>
+                        <li>Пробел: Пауза.</li>
+                    </ul>
+                    <h4 class="font-semibold text-lg mt-4 mb-2 text-yellow-600 dark:text-yellow-400">Как играть в "2048":</h4>
+                    <ul class="dark:text-dark-text-secondary">
+                        <li>Используй стрелки для перемещения всех плиток на поле.</li>
+                        <li>Когда две плитки с одинаковым числом сталкиваются, они сливаются в одну.</li>
+                    </ul>
+                     <h4 class="font-semibold text-lg mt-4 mb-2 text-purple-600 dark:text-purple-400">Как играть в "Три в ряд":</h4>
+                    <ul class="dark:text-dark-text-secondary">
+                        <li>Кликните по одной фигурке, а затем по соседней, чтобы поменять их местами.</li>
+                        <li>Цель - собрать линию из трех или более одинаковых фигурок.</li>
+                        <li>Игра заканчивается, когда у вас не останется ходов.</li>
+                    </ul>
+                     <h4 class="font-semibold text-lg mt-4 mb-2 text-gray-600 dark:text-gray-400">Как играть в "Сапёр":</h4>
+                    <ul class="dark:text-dark-text-secondary">
+                        <li>Левый клик открывает ячейку. Первый клик всегда безопасен.</li>
+                        <li>Правый клик ставит флажок, если вы думаете, что под ячейкой мина.</li>
+                        <li>Цифра в ячейке показывает, сколько мин находится в 8 соседних ячейках.</li>
+                        <li>Цель - открыть все ячейки без мин.</li>
+                    </ul>
+                     <h4 class="font-semibold text-lg mt-4 mb-2 text-pink-600 dark:text-pink-400">Как играть в "На память":</h4>
+                    <ul class="dark:text-dark-text-secondary">
+                        <li>Кликайте по карточкам, чтобы их перевернуть.</li>
+                        <li>Если карточки совпадают, они остаются открытыми. Если нет - переворачиваются обратно.</li>
+                        <li>Цель - найти все пары за наименьшее число попыток.</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button id="understandButton" class="btn-primary px-5 py-2 rounded-md">Понятно!</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 mt-12 dark:bg-dark-surface dark:border-t dark:border-dark-border">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2024-2025 ИгроМир. Все права защищены (концепт).</p>
+            <p class="text-sm text-gray-400">Создано с <i class="fas fa-heart text-red-500"></i> для юных геймеров.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
